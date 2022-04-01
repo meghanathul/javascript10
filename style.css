@@ -1,0 +1,15 @@
+h1{
+    color: blue;
+}
+span{
+    color: brown;
+    font-size: 20px;
+}
+p{
+    font-size: 25px;
+    color: darkgreen;
+}
+pre{
+    font-size: 20px;
+    color: darkslategrey;
+}

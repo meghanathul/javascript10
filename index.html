@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>this</h1>
+    <p># point to current object. <br># if we write onny this then it point to lobal variable.</p>
+    <pre>
+        syn:-
+        
+const names={
+    firstname:'Meghana',
+    lastname:'Thul',
+    fullname:function(){
+        console.log(this.firstname+ this.lastname')
+    }
+}
+names.fullname()
+    </pre>
+    <hr>
+    <h1>call apply bind</h1>
+    <span>call, apply,bind are use to bowrowing function.</span>
+    <p>1. call is take argument seperat.</p>
+    <pre>
+        syn:- 
+        const names={
+            firstname:'Meghana',
+            lastname:'Thul',
+            fullname:function(no){
+                console.log(this.firstname+ this.lastname+' my faverate no is ' + no)
+            }
+        }
+        names.fullname(9)
+        
+        
+        
+        const name1={
+            firstname:'aaaa',
+            lastname:'bbbnb',
+             
+        }
+         names.fullname.call(name1,9)
+    </pre>
+    <p>2.apply is take arument in arrey formate.</p>
+    <pre>
+        syn:- 
+        const names={
+            firstname:'Meghana',
+            lastname:'Thul',
+            fullname:function(no){
+                console.log(this.firstname+ this.lastname+' my faverate no is ' + no)
+            }
+        }
+        names.fullname(9)
+        
+        
+        
+        const name1={
+            firstname:'aaaa',
+            lastname:'bbbnb',
+             
+        }
+         names.fullname.apply(name1,[9])
+    </pre>
+    <p>3.bind return new function.</p>
+    <pre>
+        syn:- 
+        const names={
+            firstname:'Meghana',
+            lastname:'Thul',
+            
+        }
+        
+        let fullname=function(no){
+            console.log(this.firstname+ this.lastname+' my faverate no is ' + no)
+        }
+        const name1={
+            firstname:'aaaa',
+            lastname:'bbbnb',
+             
+        }
+        let Myname=fullname.bind(name1,9)
+  
+        console.log(Myname())
+    </pre>
+    <hr>
+    <h1>prototype</h1>
+    <p>whenever we create any object or function in our javascript engine will attach an object to our original object. <br>proto= js engine is keeping all this  fun in our proto</p>
+    
+    
+    
+    <h1>prototype chaining</h1>
+    <p>prototype inside prototype untill it find null.</p>
+    <hr>
+    <h1>Function constructor</h1>
+    <pre>
+        syn:- 
+        function Person(name,age,city){
+            this.name=name;
+            this.age=age;
+            this.city=city
+        }
+        
+        
+        const per=new Person('Meghana',24,'Amravati')
+        console.log(per.name)
+        console.log(per.age)
+        
+        per.last='Thul'      //adding new data
+        console.log(per)
+        
+        
+        Person.prototype.state='MAHARASHTRA'
+        console.log(per.state)
+        
+        
+        
+    </pre>
+    <script src="./script.js"></script>
+</body>
+</html>
